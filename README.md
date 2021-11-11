@@ -1,5 +1,20 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
 
+## About
+
+This project is personal project for Ajib Web Enggineer Test.
+You can access live demo in [https://datatable-ajaib.herokuapp.com/](https://datatable-ajaib.herokuapp.com/)
+
+## Config
+
+example `.env` for this project
+
+```env
+
+REACT_APP_BASE_API_URL=https://randomuser.me/api/
+
+```
+
 ## Available Scripts
 
 In the project directory, you can run:
