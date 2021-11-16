@@ -38,7 +38,6 @@ export class Datatable extends Component{
     ];
     this.state = {
       users: [],
-      filterUsers: [],
       gender: '',
       search: '',
       pending: false,
@@ -60,19 +59,19 @@ export class Datatable extends Component{
       this.state.sort, 
       this.state.order
     ).then(res => {
-      this.setState({users: res.results, filterUsers: res.results, pending: false})
+      this.setState({users: res.results, pending: false})
     })
   }
 
   handlePageChange = (page) => {
     this.setState({page: page}, () => this.fetchUsersData())
-	};
+  };
 
-	handlePerRowsChange = (newPerPage, page) =>{
+  handlePerRowsChange = (newPerPage, page) => {
     this.setState({perPage: newPerPage, page: page}, () => this.fetchUsersData())
-	};
+  };
 
-  handleSort = (column, sortDirection) =>{
+  handleSort = (column, sortDirection) => {
     this.setState({sort: column.name, order: sortDirection}, () => this.fetchUsersData())
   }
 
@@ -116,15 +115,15 @@ export class Datatable extends Component{
         <DataTable
           title="User Data"
           columns={this.columns}
-          data={this.state.filterUsers}
+          data={this.state.users}
           pagination
-			    paginationServer
+          paginationServer
           sortServer
           progressPending={this.state.pending}
-			    paginationTotalRows={this.state.totalRow}
+          paginationTotalRows={this.state.totalRow}
           onChangeRowsPerPage={this.handlePerRowsChange}
           onSort={this.handleSort}
-			    onChangePage={this.handlePageChange}
+          onChangePage={this.handlePageChange}
         />
       </div>
     )
